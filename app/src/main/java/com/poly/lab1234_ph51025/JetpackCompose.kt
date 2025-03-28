@@ -1,5 +1,9 @@
 package com.poly.lab1234_ph51025
 
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -27,11 +31,21 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import com.poly.lab1234_ph51025.ui.theme.Lab1234_PH51025Theme
 
+class JetpackCompose : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent{
+            NoteScreen()
+        }
+    }
 
+
+}
 @Composable
 fun NoteScreen() {
     var notes by remember { mutableStateOf(listOf("Note 1", "Note 2", "Note 3")) }
-    var showDialog by remember { mutableStateOf(false) } // Kiểm soát hiển thị hộp thoại
+    var showDialog by remember { mutableStateOf(false) }
 
     Scaffold(
         floatingActionButton = {
@@ -59,7 +73,7 @@ fun NoteScreen() {
             onDismiss = { showDialog = false },
             onSave = { newNote ->
                 if (newNote.isNotEmpty()) {
-                    notes = notes + newNote // Thêm ghi chú mới vào danh sách
+                    notes = notes + newNote
                 }
                 showDialog = false
             }
@@ -69,7 +83,7 @@ fun NoteScreen() {
 
 @Composable
 fun NoteCard(noteText: String) {
-    var expanded by remember { mutableStateOf(false) } // Trạng thái mở rộng ghi chú
+    var expanded by remember { mutableStateOf(false) }
 
     Box(
         modifier = Modifier
@@ -77,7 +91,7 @@ fun NoteCard(noteText: String) {
             .padding(8.dp)
             .clip(RoundedCornerShape(12.dp))
             .background(color = Color.LightGray)
-            .clickable { expanded = !expanded } // Nhấp vào ghi chú để mở rộng
+            .clickable { expanded = !expanded }
     ) {
         Row(
             modifier = Modifier.padding(16.dp),
@@ -94,7 +108,7 @@ fun NoteCard(noteText: String) {
                 )
                 if (expanded) {
                     Text(
-                        text = "Nội dung ghi chú mở rộng...",
+                        text = "hehehehehehehehe...",
                         style = MaterialTheme.typography.bodySmall,
                         color = Color.DarkGray
                     )

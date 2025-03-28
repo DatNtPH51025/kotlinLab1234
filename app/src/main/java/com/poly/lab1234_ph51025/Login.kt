@@ -1,7 +1,10 @@
+package com.poly.lab1234_ph51025
+
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -16,9 +19,18 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.poly.lab1234_ph51025.R
+
+class Login : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent{
+            LoginScreen()
+        }
+    }
 
 
+}
 @Composable
 fun LoginScreen() {
     val context = LocalContext.current
@@ -32,7 +44,6 @@ fun LoginScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Logo
         Image(
             painter = painterResource(id = R.drawable.ic_launcher_foreground),
             contentDescription = "Logo",
@@ -41,7 +52,6 @@ fun LoginScreen() {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        // Username TextField
         OutlinedTextField(
             value = username,
             onValueChange = { username = it },
@@ -52,7 +62,6 @@ fun LoginScreen() {
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        // Password TextField
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
@@ -63,12 +72,10 @@ fun LoginScreen() {
         )
 
         Spacer(modifier = Modifier.height(16.dp))
-
-        // Login Button
         Button(
             onClick = {
                 if (username.isNotBlank() && password.isNotBlank()) {
-                    Toast.makeText(context, "Login successful", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "com.poly.lab1234_ph51025.Login successful", Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(
                         context,
@@ -79,7 +86,7 @@ fun LoginScreen() {
             },
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color.DarkGray,
+                containerColor = Color.Green,
                 contentColor = Color.White
             )
         ) {
