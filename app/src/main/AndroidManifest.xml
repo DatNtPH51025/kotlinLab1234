@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+<uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab1234_PH51025"
         tools:targetApi="31">
+        <activity
+            android:name=".Lab5_PH51025"
+            android:exported="false"
+            android:label="@string/title_activity_lab5_ph51025"
+            android:theme="@style/Theme.Lab1234_PH51025" />
+        <activity
+            android:name=".Lab6.Lab6_PH51025"
+            android:exported="false"
+            android:label="@string/title_activity_lab6_ph51025"
+            android:theme="@style/Theme.Lab1234_PH51025" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -27,17 +37,17 @@
             android:name=".Login"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Lab1234_PH51025"/>
+            android:theme="@style/Theme.Lab1234_PH51025" />
         <activity
             android:name=".ImageComponents"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Lab1234_PH51025"/>
+            android:theme="@style/Theme.Lab1234_PH51025" />
         <activity
             android:name=".JetpackCompose"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Lab1234_PH51025"/>
+            android:theme="@style/Theme.Lab1234_PH51025" />
     </application>
 
 </manifest>
