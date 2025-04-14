@@ -18,13 +18,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.*
 import androidx.compose.ui.platform.LocalContext
-import com.poly.lab1234_ph51025.Lab6.CinemaSeatBookingScreen
 import com.poly.lab1234_ph51025.Lab6.MainScreen1
-import com.poly.lab1234_ph51025.Lab6.aisleColumn
-import com.poly.lab1234_ph51025.Lab6.aisleRow
-import com.poly.lab1234_ph51025.Lab6.createTheaterSeating
-import com.poly.lab1234_ph51025.Lab6.totalRows
-import com.poly.lab1234_ph51025.Lab6.totalSeatsPerRow
+import com.poly.lab1234_ph51025.Lab78.ui.ScreenNavigation
 import com.poly.lab1234_ph51025.ui.theme.Lab1234_PH51025Theme
 
 class MainActivity : ComponentActivity() {
@@ -49,11 +44,14 @@ class MainActivity : ComponentActivity() {
 //                CategoryApp()
 
 
-                MainScreen1()
+//                MainScreen1()
 //                CinemaSeatBookingScreen(
 //                    seats = createTheaterSeating(totalRows, totalSeatsPerRow, aisleRow, aisleColumn),
 //                    totalSeatsPerRow = totalSeatsPerRow
 //                )
+
+                ScreenNavigation()
+
 
             }
 
